@@ -19,4 +19,4 @@ for install in glob.glob('freetype*_install'):
     # Compile test script
     os.system('gcc `%s/bin/freetype-config --cflags` freetype_test/freetype_test.c `%s/bin/freetype-config --libs` -o bin/freetype_test_%s' % (install, install, version))
 
-    os.system('DYLD_LIBRARY_PATH=%s/lib LD_LIBRARY_PATH=%s/lib bin/freetype_test_%s freetype_test/Vera.ttf 97 20 500 8 output/%s' % (install, version, version))
+    os.system('DYLD_LIBRARY_PATH=%s/lib LD_LIBRARY_PATH=%s/lib bin/freetype_test_%s freetype_test/Vera.ttf 97 20 500 8 output/%s' % (install, install, version, version))
