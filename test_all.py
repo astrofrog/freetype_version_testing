@@ -3,19 +3,19 @@ import glob
 
 if not os.path.exists('bin'):
     os.mkdir('bin')
-    
+
 if not os.path.exists('output'):
     os.mkdir('output')
 
 for install in glob.glob('freetype*_install'):
-    
+
     # Get version
     p1 = install.index('-')
     p2 = install.index('_')
     version = install[p1+1:p2]
-    
+
     print version
-    
+
     # Compile test script
     os.system('gcc `%s/bin/freetype-config --cflags` freetype_test/freetype_test.c `%s/bin/freetype-config --libs` -o bin/freetype_test_%s' % (install, install, version))
 
