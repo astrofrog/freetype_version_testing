@@ -1,6 +1,12 @@
 import os
 import glob
 
+if not os.path.exists('bin'):
+    os.mkdir('bin')
+    
+if not os.path.exists('output'):
+    os.mkdir('output')
+
 for install in glob.glob('freetype*_install'):
     
     # Get version
